@@ -31,7 +31,7 @@
 
         .wrap-container {
             display: grid;
-            grid-template-columns: 1fr;
+            grid-template-columns: 1fr 1fr;
             gap: 15px;
             max-width: 100%;
             margin: 0 auto;
@@ -120,6 +120,7 @@
             border-radius: 10px;
             padding: 10px;
         }
+        /* 素材卡牌 + 删除按钮 */
         .item-card {
             background: #2D2D34;
             padding: 10px 14px;
@@ -128,11 +129,36 @@
             max-width: 180px;
             line-height: 1.6;
             font-size: 13px;
+            position: relative;
+        }
+        .item-card .close-btn {
+            position: absolute;
+            top: 4px;
+            right: 6px;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: #444;
+            color: #fff;
+            font-size: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            opacity: 0;
+            transition: 0.2s;
+        }
+        .item-card:hover .close-btn {
+            opacity: 0.6;
+        }
+        .item-card .close-btn:hover {
+            opacity: 1;
+            background: #e55;
         }
 
         .proto-container {
             display: grid;
-            grid-template-columns: 1fr;
+            grid-template-columns: 1fr 1fr;
             gap: 12px;
             margin-top: 12px;
             min-height: 80px;
@@ -145,12 +171,38 @@
                 grid-template-columns: 1fr 1fr;
             }
         }
+        /* 人物原型卡牌 + 删除按钮 */
         .proto-card {
             background: #2D2D34;
             border-radius: 12px;
             padding: 14px;
             line-height: 1.65;
             width: 100%;
+            position: relative;
+        }
+        .proto-card .close-btn {
+            position: absolute;
+            top: 6px;
+            right: 8px;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background: #555;
+            color: #fff;
+            font-size: 11px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            opacity: 0;
+            transition: 0.2s;
+        }
+        .proto-card:hover .close-btn {
+            opacity: 0.7;
+        }
+        .proto-card .close-btn:hover {
+            opacity: 1;
+            background: #e55;
         }
         .proto-card h4 {
             color: #C9B4D1;
@@ -272,7 +324,6 @@
                     <h3>情节原型库</h3>
                     <textarea id="plotPool" placeholder="情节原型，每行一个"></textarea>
                     <button onclick="savePool('plot')">存入</button>
-                    <!-- 👇 这里修复了！-->
                     <button onclick="drawItem('plotPool')">抽取</button>
                 </div>
             </div>
@@ -491,17 +542,24 @@
         {name:"掌权者 / 独裁者",core:"掌控、责任、权威、秩序",desire:"掌控局面、尊重、秩序、成功",fear:"失控、混乱、失势、丢脸",trauma:"早年失控、被夺权、被轻视",light:"领袖、担当、稳重、保护者",dark:"控制欲强、霸道、独断、冷酷",partner:"精英者、守护者、主心骨",rival:"隐士、浪子、复仇女",friend:"事业男、救世者"}
     ];
 
+    // 删除单张卡片通用函数
+    function removeCard(btn) {
+        btn.parentElement.remove();
+    }
+
+    // 素材抽卡（带删除按钮）
     function drawItem(poolId){
         const pool = document.getElementById(poolId).value.trim().split('\n').filter(item=>item.trim());
         if(!pool.length) return;
         const rand = pool[Math.floor(Math.random()*pool.length)];
-        let html = `<div class="item-card">${rand}</div>`;
+        let html = `<div class="item-card">${rand}<span class="close-btn" onclick="removeCard(this)">×</span></div>`;
         document.getElementById("itemCardArea").insertAdjacentHTML('beforeend',html);
     }
     function clearItemCards(){
         document.getElementById("itemCardArea").innerHTML = '';
     }
 
+    // 人物原型抽卡（带删除按钮）
     function drawProtoCard(){
         const card = protoCharacters[Math.floor(Math.random()*protoCharacters.length)];
         addProtoCard(card);
@@ -512,6 +570,7 @@
         const friendTags = card.friend.split('、').map(n=>`<span class="proto-tag" onclick="findAndAddCard('${n}')">${n}</span>`).join('');
         let html = `
         <div class="proto-card">
+            <span class="close-btn" onclick="removeCard(this)">×</span>
             <h4>${card.name}</h4>
             <div class="proto-line"><strong>核心：</strong>${card.core}</div>
             <div class="proto-line"><strong>欲望：</strong>${card.desire}</div>
