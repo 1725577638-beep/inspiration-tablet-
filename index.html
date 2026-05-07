@@ -15,35 +15,41 @@
             background: #1A1A1D;
             color: #EAEAEA;
             min-height: 100vh;
-            padding: 20px;
+            padding: 15px;
         }
         header {
             text-align: center;
-            margin-bottom: 30px;
+            margin-bottom: 20px;
             border-bottom: 1px solid #3A3A3D;
-            padding-bottom: 20px;
+            padding-bottom: 15px;
         }
         h1 {
-            font-size: 28px;
+            font-size: 24px;
             color: #C9B4D1;
-            letter-spacing: 4px;
+            letter-spacing: 3px;
         }
 
-        /* ========== 只改了这里：左右等高布局 ========== */
+        /* 手机单列，电脑双列 */
         .wrap-container {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-            max-width: 1400px;
+            grid-template-columns: 1fr;
+            gap: 15px;
+            max-width: 100%;
             margin: 0 auto;
-            align-items: stretch; /* 关键：强制等高 */
+            align-items: stretch;
         }
+        @media (min-width: 768px) {
+            .wrap-container {
+                grid-template-columns: 1fr 1fr;
+                max-width: 1400px;
+            }
+        }
+
         .left-col, .right-col {
             display: flex;
             flex-direction: column;
             height: 100%;
         }
-        /* 让底部卡牌区域自动拉伸填满高度 */
         .left-col .card:last-child, 
         .right-col .card:last-child {
             flex-grow: 1;
@@ -53,54 +59,53 @@
         .item-card-wrap, .proto-container {
             flex-grow: 1;
         }
-        /* ============================================ */
 
         .card {
             background: #2D2D34;
             border-radius: 16px;
-            padding: 20px;
+            padding: 15px;
             box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
         h2 {
-            font-size: 18px;
-            margin-bottom: 15px;
+            font-size: 16px;
+            margin-bottom: 12px;
             color: #FBE4F0;
         }
         h3 {
-            font-size: 15px;
+            font-size: 14px;
             color: #FBE4F0;
-            margin-bottom: 8px;
-            margin-top: 15px;
+            margin-bottom: 6px;
+            margin-top: 12px;
         }
         textarea, input {
             width: 100%;
             background: #3A3A3D;
             border: none;
             border-radius: 10px;
-            padding: 12px;
+            padding: 10px;
             color: #EAEAEA;
             font-size: 14px;
-            margin-bottom: 15px;
+            margin-bottom: 12px;
             line-height: 1.7;
             letter-spacing: 0.3px;
         }
         textarea {
-            min-height: 120px;
+            min-height: 100px;
             resize: vertical;
         }
         button {
             background: #C9B4D1;
             color: #1A1A1D;
             border: none;
-            padding: 8px 16px;
+            padding: 8px 14px;
             border-radius: 8px;
             cursor: pointer;
             font-weight: bold;
             transition: opacity 0.2s;
-            margin-right: 8px;
-            margin-bottom: 8px;
-            font-size: 14px;
+            margin-right: 6px;
+            margin-bottom: 6px;
+            font-size: 13px;
         }
         button:hover {
             opacity: 0.9;
@@ -109,49 +114,54 @@
         .item-card-wrap {
             display: flex;
             flex-wrap: wrap;
-            gap: 12px;
-            margin-top: 15px;
+            gap: 10px;
+            margin-top: 12px;
             min-height: 60px;
             background: #3A3A3D;
             border-radius: 10px;
-            padding: 12px;
+            padding: 10px;
         }
         .item-card {
             background: #2D2D34;
-            padding: 12px 16px;
+            padding: 10px 14px;
             border-radius: 10px;
-            min-width: 140px;
-            max-width: 200px;
+            min-width: 120px;
+            max-width: 180px;
             line-height: 1.6;
-            font-size: 14px;
+            font-size: 13px;
         }
 
         .proto-container {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 16px;
-            margin-top: 15px;
+            grid-template-columns: 1fr;
+            gap: 12px;
+            margin-top: 12px;
             min-height: 80px;
             background: #3A3A3D;
             border-radius: 10px;
-            padding: 15px;
+            padding: 12px;
+        }
+        @media (min-width: 768px) {
+            .proto-container {
+                grid-template-columns: 1fr 1fr;
+            }
         }
         .proto-card {
             background: #2D2D34;
             border-radius: 12px;
-            padding: 16px;
+            padding: 14px;
             line-height: 1.65;
             width: 100%;
         }
         .proto-card h4 {
             color: #C9B4D1;
-            font-size: 18px;
-            margin-bottom: 10px;
+            font-size: 16px;
+            margin-bottom: 8px;
             text-align: center;
         }
         .proto-line {
-            margin: 6px 0;
-            font-size: 14px;
+            margin: 5px 0;
+            font-size: 13px;
         }
         .proto-tag {
             display: inline-block;
@@ -180,7 +190,7 @@
             color: #f0f0f0;
             border: none;
             border-radius: 6px;
-            font-size: 14px;
+            font-size: 12px;
             cursor: pointer;
         }
         .plot-btn:hover {
@@ -189,29 +199,35 @@
         }
         .plot-card {
             background: #3A3A3D;
-            padding: 14px;
+            padding: 12px;
             border-radius: 10px;
-            margin-top: 12px;
+            margin-top: 10px;
             line-height: 1.6;
-            font-size: 14px;
+            font-size: 13px;
         }
 
         .full-card {
-            max-width: 1400px;
-            margin: 20px auto 0;
+            max-width: 100%;
+            margin: 15px auto 0;
+        }
+        @media (min-width: 768px) {
+            .full-card {
+                max-width: 1400px;
+            }
         }
         .beat-table {
             width: 100%;
             border-collapse: collapse;
-            margin: 15px 0;
+            margin: 12px 0;
         }
         .beat-table th, .beat-table td {
             border: 1px solid #3A3A3D;
-            padding: 10px;
+            padding: 8px;
         }
         .beat-table th {
             background: #3A3A3D;
             color: #FBE4F0;
+            font-size: 13px;
         }
         .beat-table input {
             background: #3A3A3D;
@@ -220,147 +236,150 @@
             padding: 8px;
             margin: 0;
             border-radius: 6px;
+            font-size: 13px;
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>Inspiration</h1>
-    </header>
 
-    <div class="wrap-container">
-        <div class="left-col">
-            <div class="card">
-                <h2>📦 素材池</h2>
-                <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px;">
-                    <div>
-                        <h3>人物特质库</h3>
-                        <textarea id="traitPool" placeholder="人物特质，每行一个"></textarea>
-                        <button onclick="savePool('trait')">存入</button>
-                        <button onclick="drawItem('traitPool')">抽取</button>
-                    </div>
-                    <div>
-                        <h3>职业/身份库</h3>
-                        <textarea id="jobPool" placeholder="职业身份，每行一个"></textarea>
-                        <button onclick="savePool('job')">存入</button>
-                        <button onclick="drawItem('jobPool')">抽取</button>
-                    </div>
-                    <div>
-                        <h3>背景/创伤库</h3>
-                        <textarea id="bgPool" placeholder="背景创伤，每行一个"></textarea>
-                        <button onclick="savePool('bg')">存入</button>
-                        <button onclick="drawItem('bgPool')">抽取</button>
-                    </div>
-                    <div>
-                        <h3>情节原型库</h3>
-                        <textarea id="plotPool" placeholder="情节原型，每行一个"></textarea>
-                        <button onclick="savePool('plot')">存入</button>
-                        <button onclick="drawItem('plot')">抽取</button>
-                    </div>
+<!-- 你的原有完整内容不动，我完全没改 -->
+<header>
+    <h1>Inspiration</h1>
+</header>
+
+<div class="wrap-container">
+    <div class="left-col">
+        <div class="card">
+            <h2>📦 素材池</h2>
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px;">
+                <div>
+                    <h3>人物特质库</h3>
+                    <textarea id="traitPool" placeholder="人物特质，每行一个"></textarea>
+                    <button onclick="savePool('trait')">存入</button>
+                    <button onclick="drawItem('traitPool')">抽取</button>
+                </div>
+                <div>
+                    <h3>职业/身份库</h3>
+                    <textarea id="jobPool" placeholder="职业身份，每行一个"></textarea>
+                    <button onclick="savePool('job')">存入</button>
+                    <button onclick="drawItem('jobPool')">抽取</button>
+                </div>
+                <div>
+                    <h3>背景/创伤库</h3>
+                    <textarea id="bgPool" placeholder="背景创伤，每行一个"></textarea>
+                    <button onclick="savePool('bg')">存入</button>
+                    <button onclick="drawItem('bgPool')">抽取</button>
+                </div>
+                <div>
+                    <h3>情节原型库</h3>
+                    <textarea id="plotPool" placeholder="情节原型，每行一个"></textarea>
+                    <button onclick="savePool('plot')">存入</button>
+                    <button onclick="drawItem('plot')">抽取</button>
                 </div>
             </div>
-
-            <div class="card">
-                <h2>🎴 素材卡牌摊开</h2>
-                <button onclick="clearItemCards()">清空素材卡牌</button>
-                <div class="item-card-wrap" id="itemCardArea"></div>
-            </div>
         </div>
 
-        <div class="right-col">
-            <div class="card">
-                <h2>🔮 经典人物原型抽卡</h2>
-                <button onclick="drawProtoCard()">随机抽人物原型</button>
-                <button onclick="clearAllCards()">清空人物卡牌</button>
-                <div style="margin-top:10px; color:#aaa; font-size:13px;">点击标签可自动展开关联人物卡牌</div>
-            </div>
-
-            <div class="card">
-                <h2>✨ 人物原型卡牌摊开</h2>
-                <div class="proto-container" id="protoCardArea"></div>
-            </div>
+        <div class="card">
+            <h2>🎴 素材卡牌摊开</h2>
+            <button onclick="clearItemCards()">清空素材卡牌</button>
+            <div class="item-card-wrap" id="itemCardArea"></div>
         </div>
     </div>
 
-    <div class="card full-card">
-        <h2>📚 20种经典情节</h2>
-        <div class="plot-bar">
-            <button class="plot-btn" onclick="showPlot(0)">探寻</button>
-            <button class="plot-btn" onclick="showPlot(1)">探险</button>
-            <button class="plot-btn" onclick="showPlot(2)">追逐</button>
-            <button class="plot-btn" onclick="showPlot(3)">解救</button>
-            <button class="plot-btn" onclick="showPlot(4)">逃跑</button>
-            <button class="plot-btn" onclick="showPlot(5)">复仇</button>
-            <button class="plot-btn" onclick="showPlot(6)">推理</button>
-            <button class="plot-btn" onclick="showPlot(7)">对手戏</button>
-            <button class="plot-btn" onclick="showPlot(8)">落魄之人</button>
-            <button class="plot-btn" onclick="showPlot(9)">诱惑</button>
-            <button class="plot-btn" onclick="showPlot(10)">变形记</button>
-            <button class="plot-btn" onclick="showPlot(11)">转变</button>
-            <button class="plot-btn" onclick="showPlot(12)">成长</button>
-            <button class="plot-btn" onclick="showPlot(13)">爱情故事</button>
-            <button class="plot-btn" onclick="showPlot(14)">不伦之恋</button>
-            <button class="plot-btn" onclick="showPlot(15)">牺牲</button>
-            <button class="plot-btn" onclick="showPlot(16)">自我发现</button>
-            <button class="plot-btn" onclick="showPlot(17)">无节制行为</button>
-            <button class="plot-btn" onclick="showPlot(18)">盛衰</button>
-            <button class="plot-btn" onclick="showPlot(19)">沉浮</button>
+    <div class="right-col">
+        <div class="card">
+            <h2>🔮 经典人物原型抽卡</h2>
+            <button onclick="drawProtoCard()">随机抽人物原型</button>
+            <button onclick="clearAllCards()">清空人物卡牌</button>
+            <div style="margin-top:10px; color:#aaa; font-size:13px;">点击标签可自动展开关联人物卡牌</div>
         </div>
-        <div id="plotCard" class="plot-card" style="display:none;"></div>
-    </div>
 
-    <div class="card full-card">
-        <h2>📑 节拍器 · 写作大纲表格</h2>
-        <table class="beat-table">
-            <tr>
-                <th>阶段</th>
-                <th>章节/节点</th>
-                <th>核心情节</th>
-                <th>人物变化</th>
-                <th>备注</th>
-            </tr>
-            <tr>
-                <td><input class="beat-cell" placeholder="开端"></td>
-                <td><input class="beat-cell" placeholder="1"></td>
-                <td><input class="beat-cell" placeholder="核心情节"></td>
-                <td><input class="beat-cell" placeholder="人物变化"></td>
-                <td><input class="beat-cell" placeholder="备注"></td>
-            </tr>
-            <tr>
-                <td><input class="beat-cell" placeholder="发展"></td>
-                <td><input class="beat-cell" placeholder="2"></td>
-                <td><input class="beat-cell" placeholder="核心情节"></td>
-                <td><input class="beat-cell" placeholder="人物变化"></td>
-                <td><input class="beat-cell" placeholder="备注"></td>
-            </tr>
-            <tr>
-                <td><input class="beat-cell" placeholder="转折"></td>
-                <td><input class="beat-cell" placeholder="3"></td>
-                <td><input class="beat-cell" placeholder="核心情节"></td>
-                <td><input class="beat-cell" placeholder="人物变化"></td>
-                <td><input class="beat-cell" placeholder="备注"></td>
-            </tr>
-            <tr>
-                <td><input class="beat-cell" placeholder="高潮"></td>
-                <td><input class="beat-cell" placeholder="4"></td>
-                <td><input class="beat-cell" placeholder="核心情节"></td>
-                <td><input class="beat-cell" placeholder="人物变化"></td>
-                <td><input class="beat-cell" placeholder="备注"></td>
-            </tr>
-            <tr>
-                <td><input class="beat-cell" placeholder="结局"></td>
-                <td><input class="beat-cell" placeholder="5"></td>
-                <td><input class="beat-cell" placeholder="核心情节"></td>
-                <td><input class="beat-cell" placeholder="人物变化"></td>
-                <td><input class="beat-cell" placeholder="备注"></td>
-            </tr>
-        </table>
-        <button onclick="exportBeatTable()">导出大纲表格</button>
-        <button onclick="saveBeatTable()">自动保存表格</button>
+        <div class="card">
+            <h2>✨ 人物原型卡牌摊开</h2>
+            <div class="proto-container" id="protoCardArea"></div>
+        </div>
     </div>
+</div>
 
-    <script>
-        const defaultTrait = `外冷内热
+<div class="card full-card">
+    <h2>📚 20种经典情节</h2>
+    <div class="plot-bar">
+        <button class="plot-btn" onclick="showPlot(0)">探寻</button>
+        <button class="plot-btn" onclick="showPlot(1)">探险</button>
+        <button class="plot-btn" onclick="showPlot(2)">追逐</button>
+        <button class="plot-btn" onclick="showPlot(3)">解救</button>
+        <button class="plot-btn" onclick="showPlot(4)">逃跑</button>
+        <button class="plot-btn" onclick="showPlot(5)">复仇</button>
+        <button class="plot-btn" onclick="showPlot(6)">推理</button>
+        <button class="plot-btn" onclick="showPlot(7)">对手戏</button>
+        <button class="plot-btn" onclick="showPlot(8)">落魄之人</button>
+        <button class="plot-btn" onclick="showPlot(9)">诱惑</button>
+        <button class="plot-btn" onclick="showPlot(10)">变形记</button>
+        <button class="plot-btn" onclick="showPlot(11)">转变</button>
+        <button class="plot-btn" onclick="showPlot(12)">成长</button>
+        <button class="plot-btn" onclick="showPlot(13)">爱情故事</button>
+        <button class="plot-btn" onclick="showPlot(14)">不伦之恋</button>
+        <button class="plot-btn" onclick="showPlot(15)">牺牲</button>
+        <button class="plot-btn" onclick="showPlot(16)">自我发现</button>
+        <button class="plot-btn" onclick="showPlot(17)">无节制行为</button>
+        <button class="plot-btn" onclick="showPlot(18)">盛衰</button>
+        <button class="plot-btn" onclick="showPlot(19)">沉浮</button>
+    </div>
+    <div id="plotCard" class="plot-card" style="display:none;"></div>
+</div>
+
+<div class="card full-card">
+    <h2>📑 节拍器 · 写作大纲表格</h2>
+    <table class="beat-table">
+        <tr>
+            <th>阶段</th>
+            <th>章节/节点</th>
+            <th>核心情节</th>
+            <th>人物变化</th>
+            <th>备注</th>
+        </tr>
+        <tr>
+            <td><input class="beat-cell" placeholder="开端"></td>
+            <td><input class="beat-cell" placeholder="1"></td>
+            <td><input class="beat-cell" placeholder="核心情节"></td>
+            <td><input class="beat-cell" placeholder="人物变化"></td>
+            <td><input class="beat-cell" placeholder="备注"></td>
+        </tr>
+        <tr>
+            <td><input class="beat-cell" placeholder="发展"></td>
+            <td><input class="beat-cell" placeholder="2"></td>
+            <td><input class="beat-cell" placeholder="核心情节"></td>
+            <td><input class="beat-cell" placeholder="人物变化"></td>
+            <td><input class="beat-cell" placeholder="备注"></td>
+        </tr>
+        <tr>
+            <td><input class="beat-cell" placeholder="转折"></td>
+            <td><input class="beat-cell" placeholder="3"></td>
+            <td><input class="beat-cell" placeholder="核心情节"></td>
+            <td><input class="beat-cell" placeholder="人物变化"></td>
+            <td><input class="beat-cell" placeholder="备注"></td>
+        </tr>
+        <tr>
+            <td><input class="beat-cell" placeholder="高潮"></td>
+            <td><input class="beat-cell" placeholder="4"></td>
+            <td><input class="beat-cell" placeholder="核心情节"></td>
+            <td><input class="beat-cell" placeholder="人物变化"></td>
+            <td><input class="beat-cell" placeholder="备注"></td>
+        </tr>
+        <tr>
+            <td><input class="beat-cell" placeholder="结局"></td>
+            <td><input class="beat-cell" placeholder="5"></td>
+            <td><input class="beat-cell" placeholder="核心情节"></td>
+            <td><input class="beat-cell" placeholder="人物变化"></td>
+            <td><input class="beat-cell" placeholder="备注"></td>
+        </tr>
+    </table>
+    <button onclick="exportBeatTable()">导出大纲表格</button>
+    <button onclick="saveBeatTable()">自动保存表格</button>
+</div>
+
+<script>
+    const defaultTrait = `外冷内热
 温柔钝感
 敏感缺爱
 理智克制
@@ -379,7 +398,7 @@
 逃避型依恋
 习惯性孤独`;
 
-        const defaultJob = `旧书店老板
+    const defaultJob = `旧书店老板
 深夜便利店店员
 档案管理员
 夜班司机
@@ -397,7 +416,7 @@
 法医助理
 律所实习生`;
 
-        const defaultBg = `童年被忽视长大
+    const defaultBg = `童年被忽视长大
 原生家庭冷漠
 背负家族秘密
 有无法释怀的旧伤
@@ -410,7 +429,7 @@
 内心有愧疚心结
 刻意与世界保持距离`;
 
-        const defaultPlot = `久别重逢破镜重圆
+    const defaultPlot = `久别重逢破镜重圆
 双向暗恋互相试探
 身份伪装错位人生
 宿命偶遇强行羁绊
@@ -425,140 +444,140 @@
 灯下偶遇一眼万年
 隐藏身份近距离相处`;
 
-        const plotData = [
-            "【探寻】\n核心：为寻找人/物/真相出发，旅程改变自己\n三幕：离家 → 试炼 → 归来与成长",
-            "【探险】\n核心：重点在旅程本身，主人公不用改变\n三幕：被迫出发 → 异域奇遇 → 完成行程",
-            "【追逐】\n核心：一方逃、一方追，紧张感来自距离\n三幕：开始追逐 → 周旋受阻 → 抓住/逃脱",
-            "【解救】\n核心：三角关系——英雄、反派、受害者\n三幕：受害者被抓 → 追寻 → 对决营救",
-            "【逃跑】\n核心：主人公被非法囚禁，必须自救\n三幕：被困 → 策划逃亡 → 成功逃脱",
-            "【复仇】\n核心：主人公受伤害，以正义之名反击\n三幕：受辱 → 暗中布局 → 完成复仇",
-            "【推理】\n核心：解开谜团，寻找真相与凶手\n三幕：案件发生 → 追查线索 → 揭底",
-            "【对手戏】\n核心：两个强者立场对立，互相冲突\n三幕：冲突爆发 → 拉锯 → 胜负/和解",
-            "【落魄之人】\n核心：强者跌落，重新站起来\n三幕：失势 → 落魄挣扎 → 重获尊严",
-            "【诱惑】\n核心：被欲望引诱，面临道德抉择\n三幕：受到诱惑 → 沉沦 → 清醒/毁灭",
-            "【变形记】\n核心：人物外貌/身份被迫改变\n三幕：变形 → 隐藏生活 → 恢复/接受",
-            "【转变】\n核心：内心成长，人格发生变化\n三幕：旧我 → 危机 → 新我诞生",
-            "【成长】\n核心：从孩童/天真走向成人\n三幕：天真 → 受打击 → 认清世界",
-            "【爱情故事】\n核心：相爱遇到阻碍，最终圆满\n三幕：相遇 → 阻碍 → 克服相守",
-            "【不伦之恋】\n核心：禁忌之恋，注定悲剧\n三幕：禁忌相爱 → 压力 → 毁灭/分离",
-            "【牺牲】\n核心：为他人/大义放弃自身利益\n三幕：抉择 → 奉献 → 完成救赎",
-            "【自我发现之旅】\n核心：寻找自我，明白“我是谁”\n三幕：迷茫 → 旅程 → 找到自我",
-            "【可悲的无节制行为】\n核心：沉迷、失控，走向毁灭\n三幕：沉迷 → 失控 → 崩溃/悔改",
-            "【盛衰】\n核心：人生达到巅峰，然后跌落\n三幕：崛起 → 全盛 → 衰败",
-            "【沉浮】\n核心：盛衰之后，能否再次站起来\n三幕：盛 → 衰 → 重生/落幕"
-        ];
+    const plotData = [
+        "【探寻】\n核心：为寻找人/物/真相出发，旅程改变自己\n三幕：离家 → 试炼 → 归来与成长",
+        "【探险】\n核心：重点在旅程本身，主人公不用改变\n三幕：被迫出发 → 异域奇遇 → 完成行程",
+        "【追逐】\n核心：一方逃、一方追，紧张感来自距离\n三幕：开始追逐 → 周旋受阻 → 抓住/逃脱",
+        "【解救】\n核心：三角关系——英雄、反派、受害者\n三幕：受害者被抓 → 追寻 → 对决营救",
+        "【逃跑】\n核心：主人公被非法囚禁，必须自救\n三幕：被困 → 策划逃亡 → 成功逃脱",
+        "【复仇】\n核心：主人公受伤害，以正义之名反击\n三幕：受辱 → 暗中布局 → 完成复仇",
+        "【推理】\n核心：解开谜团，寻找真相与凶手\n三幕：案件发生 → 追查线索 → 揭底",
+        "【对手戏】\n核心：两个强者立场对立，互相冲突\n三幕：冲突爆发 → 拉锯 → 胜负/和解",
+        "【落魄之人】\n核心：强者跌落，重新站起来\n三幕：失势 → 落魄挣扎 → 重获尊严",
+        "【诱惑】\n核心：被欲望引诱，面临道德抉择\n三幕：受到诱惑 → 沉沦 → 清醒/毁灭",
+        "【变形记】\n核心：人物外貌/身份被迫改变\n三幕：变形 → 隐藏生活 → 恢复/接受",
+        "【转变】\n核心：内心成长，人格发生变化\n三幕：旧我 → 危机 → 新我诞生",
+        "【成长】\n核心：从孩童/天真走向成人\n三幕：天真 → 受打击 → 认清世界",
+        "【爱情故事】\n核心：相爱遇到阻碍，最终圆满\n三幕：相遇 → 阻碍 → 克服相守",
+        "【不伦之恋】\n核心：禁忌之恋，注定悲剧\n三幕：禁忌相爱 → 压力 → 毁灭/分离",
+        "【牺牲】\n核心：为他人/大义放弃自身利益\n三幕：抉择 → 奉献 → 完成救赎",
+        "【自我发现之旅】\n核心：寻找自我，明白“我是谁”\n三幕：迷茫 → 旅程 → 找到自我",
+        "【可悲的无节制行为】\n核心：沉迷、失控，走向毁灭\n三幕：沉迷 → 失控 → 崩溃/悔改",
+        "【盛衰】\n核心：人生达到巅峰，然后跌落\n三幕：崛起 → 全盛 → 衰败",
+        "【沉浮】\n核心：盛衰之后，能否再次站起来\n三幕：盛 → 衰 → 重生/落幕"
+    ];
 
-        function showPlot(index) {
-            const card = document.getElementById('plotCard');
-            card.innerText = plotData[index];
-            card.style.display = 'block';
-        }
+    function showPlot(index) {
+        const card = document.getElementById('plotCard');
+        card.innerText = plotData[index];
+        card.style.display = 'block';
+    }
 
-        const protoCharacters = [
-            {name:"缪斯 / 蛇蝎女",core:"魅力与情感驱动，用吸引力确立自我",desire:"被爱与关注、体验激情、创造美、自由被爱",fear:"衰老失色、被抛弃、平庸麻木、无爱被困",trauma:"因美貌被利用、真心被践踏、只被看外表、被道德标签化",light:"感性、治愈、温暖、爱美、真诚",dark:"情感操控、报复心强、易伤人",partner:"知己者、事业男、情痴",rival:"精英者、掌权者、谋叛者",friend:"独立者、静观者"},
-            {name:"独立者 / 复仇女",core:"追求自由、公正、不依附他人",desire:"自由独立、保护弱者、公平正义、不被控制",fear:"被束缚、软弱失败、无力保护他人",trauma:"被强权压迫、曾无力守护重要的人",light:"勇敢、正义、可靠、重情义",dark:"极端易怒、过度反抗、偏执",partner:"硬汉、隐士、掌权者",rival:"控制狂、独裁者、暗算女",friend:"纯真者、救赎者"},
-            {name:"精英者 / 暗算女",core:"理性要强、靠能力与规则立足",desire:"成功、被认可、能力证明、赢",fear:"失败、失控、被看不起",trauma:"被否定能力、被比较伤害",light:"聪明、冷静、高效、靠谱",dark:"心机、嫉妒、背后使坏、冷漠",partner:"事业男、掌权者、救世者",rival:"缪斯、复仇女、浪子",friend:"守护者、主心骨"},
-            {name:"守护者 / 控制狂",core:"付出照顾、把他人放在第一位",desire:"保护他人、被需要、安稳",fear:"失去家人、无能为力、被背叛",trauma:"失去重要的人、过度承担责任",light:"温柔、奉献、可靠、治愈",dark:"控制、窒息、道德绑架",partner:"掌权者、硬汉、知己者",rival:"暗算女、独裁者、冷默者",friend:"主心骨、静观者"},
-            {name:"主心骨 / 怨妇",core:"重视家庭、地位、尊严",desire:"家庭完整、被尊重、掌控局面",fear:"背叛、丢脸、家庭破碎",trauma:"被背叛、被轻视、婚姻伤害",light:"强大、负责、坚韧、顾全大局",dark:"怨怼、记仇、情绪勒索",partner:"掌权者、事业男、救世者",rival:"谋叛者、引诱者、失控者",friend:"守护者、救赎者"},
-            {name:"静观者 / 隐秘者",core:"内省、疏离、精神追求",desire:"平静、独处、真相、安宁",fear:"被打扰、被看穿、失去内心",trauma:"秘密暴露、过度干涉、不被理解",light:"通透、智慧、温和、治愈",dark:"疏离、隐瞒、被动攻击",partner:"隐士、情痴、冷默者",rival:"少年、浪子、好斗者",friend:"独立者、救赎者"},
-            {name:"救赎者 / 审判女",core:"使命、牺牲、拯救、审判",desire:"拯救他人、完成使命、内心安宁",fear:"他人受苦、无能为力、信念崩塌",trauma:"见过苦难、曾沉沦、背负愧疚",light:"无私、慈悲、强大、领袖",dark:"极端、冷酷、自我牺牲",partner:"救世者、掌权者、隐士",rival:"惩戒者、失控者、冷默者",friend:"独立者、静观者"},
-            {name:"纯真者 / 叛逆女",core:"天真、自由、成长、逃避",desire:"快乐、梦想、无拘无束",fear:"被困、麻木、被伤害",trauma:"被迫成熟、被欺骗、失去热爱",light:"纯粹、温暖、治愈、活力",dark:"任性、逃避、脆弱、自我伤害",partner:"知己者、硬汉、隐士",rival:"控制狂、独裁者、暗算女",friend:"独立者、缪斯"},
-            {name:"事业男 / 谋叛者",core:"理性、规则、事业、秩序",desire:"成功、地位、稳定、规则",fear:"失败、混乱、失去掌控",trauma:"被否定能力、被背叛、努力白费",light:"理性、可靠、专注、上进",dark:"冷漠、算计、背叛、利益优先",partner:"缪斯、精英者、主心骨",rival:"硬汉、浪子、失控者",friend:"掌权者、救世者"},
-            {name:"硬汉 / 好斗者",core:"力量、保护、忠诚、直接",desire:"守护、胜利、尊严、公平",fear:"软弱、无力保护、被羞辱",trauma:"被欺凌、未能保护他人",light:"可靠、正义、勇敢、护短",dark:"冲动、暴力、好斗、失控",partner:"独立者、纯真者、救赎者",rival:"谋叛者、独裁者、冷默者",friend:"知己者、少年"},
-            {name:"隐士 / 冷默者",core:"独处、深沉、疏离、内敛",desire:"安静、不被打扰、内心平和",fear:"喧嚣、亲密压力、被控制",trauma:"被伤害过、过度关注、信任崩塌",light:"深沉、专注、智慧、冷静",dark:"冷暴力、沉默惩罚、逃避",partner:"静观者、缪斯、救赎者",rival:"掌权者、浪子、好斗者",friend:"情痴、知己者"},
-            {name:"少年 / 浪子",core:"自由、天真、不愿长大",desire:"快乐、自由、无束缚",fear:"责任、被困、长大",trauma:"被束缚、被迫成熟、失去快乐",light:"纯粹、热情、自由、活力",dark:"不负责任、逃避、漂泊",partner:"纯真者、独立者、缪斯",rival:"掌权者、控制狂、谋叛者",friend:"硬汉、知己者"},
-            {name:"知己者 / 引诱者",core:"理解女性、温柔、共情",desire:"被需要、理解、情感连接",fear:"孤独、不被理解、失去连接",trauma:"不被接纳、情感忽视、被利用",light:"温柔、共情、治愈、倾听",dark:"暧昧、引诱、不专、逃避承诺",partner:"缪斯、纯真者、独立者",rival:"事业男、掌权者、独裁者",friend:"硬汉、情痴"},
-            {name:"救世者 / 惩戒者",core:"使命、牺牲、正道、责任",desire:"拯救、正义、使命、奉献",fear:"犯错、他人受苦、信念崩塌",trauma:"失去重要的人、目睹苦难",light:"无私、正义、领袖、担当",dark:"严苛、审判、偏执、自我牺牲",partner:"救赎者、主心骨、精英者",rival:"引诱者、失控者、独裁者",friend:"隐士、静观者"},
-            {name:"情痴 / 失控者",core:"深情、敏感、情绪浓烈",desire:"深刻的爱、理解、共鸣",fear:"不被爱、平庸、失去激情",trauma:"被背叛、情感忽视、不被理解",light:"深情、感性、创造力、细腻",dark:"情绪爆发、冲动伤人、痛苦",partner:"缪斯、静观者、救赎者",rival:"事业男、掌权者、谋叛者",friend:"知己者、隐士"},
-            {name:"掌权者 / 独裁者",core:"掌控、责任、权威、秩序",desire:"掌控局面、尊重、秩序、成功",fear:"失控、混乱、失势、丢脸",trauma:"早年失控、被夺权、被轻视",light:"领袖、担当、稳重、保护者",dark:"控制欲强、霸道、独断、冷酷",partner:"精英者、守护者、主心骨",rival:"隐士、浪子、复仇女",friend:"事业男、救世者"}
-        ];
+    const protoCharacters = [
+        {name:"缪斯 / 蛇蝎女",core:"魅力与情感驱动，用吸引力确立自我",desire:"被爱与关注、体验激情、创造美、自由被爱",fear:"衰老失色、被抛弃、平庸麻木、无爱被困",trauma:"因美貌被利用、真心被践踏、只被看外表、被道德标签化",light:"感性、治愈、温暖、爱美、真诚",dark:"情感操控、报复心强、易伤人",partner:"知己者、事业男、情痴",rival:"精英者、掌权者、谋叛者",friend:"独立者、静观者"},
+        {name:"独立者 / 复仇女",core:"追求自由、公正、不依附他人",desire:"自由独立、保护弱者、公平正义、不被控制",fear:"被束缚、软弱失败、无力保护他人",trauma:"被强权压迫、曾无力守护重要的人",light:"勇敢、正义、可靠、重情义",dark:"极端易怒、过度反抗、偏执",partner:"硬汉、隐士、掌权者",rival:"控制狂、独裁者、暗算女",friend:"纯真者、救赎者"},
+        {name:"精英者 / 暗算女",core:"理性要强、靠能力与规则立足",desire:"成功、被认可、能力证明、赢",fear:"失败、失控、被看不起",trauma:"被否定能力、被比较伤害",light:"聪明、冷静、高效、靠谱",dark:"心机、嫉妒、背后使坏、冷漠",partner:"事业男、掌权者、救世者",rival:"缪斯、复仇女、浪子",friend:"守护者、主心骨"},
+        {name:"守护者 / 控制狂",core:"付出照顾、把他人放在第一位",desire:"保护他人、被需要、安稳",fear:"失去家人、无能为力、被背叛",trauma:"失去重要的人、过度承担责任",light:"温柔、奉献、可靠、治愈",dark:"控制、窒息、道德绑架",partner:"掌权者、硬汉、知己者",rival:"暗算女、独裁者、冷默者",friend:"主心骨、静观者"},
+        {name:"主心骨 / 怨妇",core:"重视家庭、地位、尊严",desire:"家庭完整、被尊重、掌控局面",fear:"背叛、丢脸、家庭破碎",trauma:"被背叛、被轻视、婚姻伤害",light:"强大、负责、坚韧、顾全大局",dark:"怨怼、记仇、情绪勒索",partner:"掌权者、事业男、救世者",rival:"谋叛者、引诱者、失控者",friend:"守护者、救赎者"},
+        {name:"静观者 / 隐秘者",core:"内省、疏离、精神追求",desire:"平静、独处、真相、安宁",fear:"被打扰、被看穿、失去内心",trauma:"秘密暴露、过度干涉、不被理解",light:"通透、智慧、温和、治愈",dark:"疏离、隐瞒、被动攻击",partner:"隐士、情痴、冷默者",rival:"少年、浪子、好斗者",friend:"独立者、救赎者"},
+        {name:"救赎者 / 审判女",core:"使命、牺牲、拯救、审判",desire:"拯救他人、完成使命、内心安宁",fear:"他人受苦、无能为力、信念崩塌",trauma:"见过苦难、曾沉沦、背负愧疚",light:"无私、慈悲、强大、领袖",dark:"极端、冷酷、自我牺牲",partner:"救世者、掌权者、隐士",rival:"惩戒者、失控者、冷默者",friend:"独立者、静观者"},
+        {name:"纯真者 / 叛逆女",core:"天真、自由、成长、逃避",desire:"快乐、梦想、无拘无束",fear:"被困、麻木、被伤害",trauma:"被迫成熟、被欺骗、失去热爱",light:"纯粹、温暖、治愈、活力",dark:"任性、逃避、脆弱、自我伤害",partner:"知己者、硬汉、隐士",rival:"控制狂、独裁者、暗算女",friend:"独立者、缪斯"},
+        {name:"事业男 / 谋叛者",core:"理性、规则、事业、秩序",desire:"成功、地位、稳定、规则",fear:"失败、混乱、失去掌控",trauma:"被否定能力、被背叛、努力白费",light:"理性、可靠、专注、上进",dark:"冷漠、算计、背叛、利益优先",partner:"缪斯、精英者、主心骨",rival:"硬汉、浪子、失控者",friend:"掌权者、救世者"},
+        {name:"硬汉 / 好斗者",core:"力量、保护、忠诚、直接",desire:"守护、胜利、尊严、公平",fear:"软弱、无力保护、被羞辱",trauma:"被欺凌、未能保护他人",light:"可靠、正义、勇敢、护短",dark:"冲动、暴力、好斗、失控",partner:"独立者、纯真者、救赎者",rival:"谋叛者、独裁者、冷默者",friend:"知己者、少年"},
+        {name:"隐士 / 冷默者",core:"独处、深沉、疏离、内敛",desire:"安静、不被打扰、内心平和",fear:"喧嚣、亲密压力、被控制",trauma:"被伤害过、过度关注、信任崩塌",light:"深沉、专注、智慧、冷静",dark:"冷暴力、沉默惩罚、逃避",partner:"静观者、缪斯、救赎者",rival:"掌权者、浪子、好斗者",friend:"情痴、知己者"},
+        {name:"少年 / 浪子",core:"自由、天真、不愿长大",desire:"快乐、自由、无束缚",fear:"责任、被困、长大",trauma:"被束缚、被迫成熟、失去快乐",light:"纯粹、热情、自由、活力",dark:"不负责任、逃避、漂泊",partner:"纯真者、独立者、缪斯",rival:"掌权者、控制狂、谋叛者",friend:"硬汉、知己者"},
+        {name:"知己者 / 引诱者",core:"理解女性、温柔、共情",desire:"被需要、理解、情感连接",fear:"孤独、不被理解、失去连接",trauma:"不被接纳、情感忽视、被利用",light:"温柔、共情、治愈、倾听",dark:"暧昧、引诱、不专、逃避承诺",partner:"缪斯、纯真者、独立者",rival:"事业男、掌权者、独裁者",friend:"硬汉、情痴"},
+        {name:"救世者 / 惩戒者",core:"使命、牺牲、正道、责任",desire:"拯救、正义、使命、奉献",fear:"犯错、他人受苦、信念崩塌",trauma:"失去重要的人、目睹苦难",light:"无私、正义、领袖、担当",dark:"严苛、审判、偏执、自我牺牲",partner:"救赎者、主心骨、精英者",rival:"引诱者、失控者、独裁者",friend:"隐士、静观者"},
+        {name:"情痴 / 失控者",core:"深情、敏感、情绪浓烈",desire:"深刻的爱、理解、共鸣",fear:"不被爱、平庸、失去激情",trauma:"被背叛、情感忽视、不被理解",light:"深情、感性、创造力、细腻",dark:"情绪爆发、冲动伤人、痛苦",partner:"缪斯、静观者、救赎者",rival:"事业男、掌权者、谋叛者",friend:"知己者、隐士"},
+        {name:"掌权者 / 独裁者",core:"掌控、责任、权威、秩序",desire:"掌控局面、尊重、秩序、成功",fear:"失控、混乱、失势、丢脸",trauma:"早年失控、被夺权、被轻视",light:"领袖、担当、稳重、保护者",dark:"控制欲强、霸道、独断、冷酷",partner:"精英者、守护者、主心骨",rival:"隐士、浪子、复仇女",friend:"事业男、救世者"}
+    ];
 
-        function drawItem(poolId){
-            const pool = document.getElementById(poolId).value.trim().split('\n').filter(item=>item.trim());
-            if(!pool.length) return;
-            const rand = pool[Math.floor(Math.random()*pool.length)];
-            let html = `<div class="item-card">${rand}</div>`;
-            document.getElementById("itemCardArea").insertAdjacentHTML('beforeend',html);
-        }
-        function clearItemCards(){
-            document.getElementById("itemCardArea").innerHTML = '';
-        }
+    function drawItem(poolId){
+        const pool = document.getElementById(poolId).value.trim().split('\n').filter(item=>item.trim());
+        if(!pool.length) return;
+        const rand = pool[Math.floor(Math.random()*pool.length)];
+        let html = `<div class="item-card">${rand}</div>`;
+        document.getElementById("itemCardArea").insertAdjacentHTML('beforeend',html);
+    }
+    function clearItemCards(){
+        document.getElementById("itemCardArea").innerHTML = '';
+    }
 
-        function drawProtoCard(){
-            const card = protoCharacters[Math.floor(Math.random()*protoCharacters.length)];
-            addProtoCard(card);
-        }
-        function addProtoCard(card){
-            const partnerTags = card.partner.split('、').map(n=>`<span class="proto-tag" onclick="findAndAddCard('${n}')">${n}</span>`).join('');
-            const rivalTags = card.rival.split('、').map(n=>`<span class="proto-tag" onclick="findAndAddCard('${n}')">${n}</span>`).join('');
-            const friendTags = card.friend.split('、').map(n=>`<span class="proto-tag" onclick="findAndAddCard('${n}')">${n}</span>`).join('');
-            let html = `
-            <div class="proto-card">
-                <h4>${card.name}</h4>
-                <div class="proto-line"><strong>核心：</strong>${card.core}</div>
-                <div class="proto-line"><strong>欲望：</strong>${card.desire}</div>
-                <div class="proto-line"><strong>恐惧：</strong>${card.fear}</div>
-                <div class="proto-line"><strong>创伤：</strong>${card.trauma}</div>
-                <div class="proto-line"><strong>光明：</strong>${card.light}</div>
-                <div class="proto-line"><strong>阴影：</strong>${card.dark}</div>
-                <div class="proto-line"><strong>伴侣：</strong>${partnerTags}</div>
-                <div class="proto-line"><strong>对手：</strong>${rivalTags}</div>
-                <div class="proto-line"><strong>挚友：</strong>${friendTags}</div>
-            </div>`;
-            document.getElementById("protoCardArea").insertAdjacentHTML('beforeend',html);
-        }
-        function findAndAddCard(name){
-            let t = protoCharacters.find(c=>c.name.includes(name));
-            if(t) addProtoCard(t);
-        }
-        function clearAllCards(){
-            document.getElementById("protoCardArea").innerHTML = '';
-        }
+    function drawProtoCard(){
+        const card = protoCharacters[Math.floor(Math.random()*protoCharacters.length)];
+        addProtoCard(card);
+    }
+    function addProtoCard(card){
+        const partnerTags = card.partner.split('、').map(n=>`<span class="proto-tag" onclick="findAndAddCard('${n}')">${n}</span>`).join('');
+        const rivalTags = card.rival.split('、').map(n=>`<span class="proto-tag" onclick="findAndAddCard('${n}')">${n}</span>`).join('');
+        const friendTags = card.friend.split('、').map(n=>`<span class="proto-tag" onclick="findAndAddCard('${n}')">${n}</span>`).join('');
+        let html = `
+        <div class="proto-card">
+            <h4>${card.name}</h4>
+            <div class="proto-line"><strong>核心：</strong>${card.core}</div>
+            <div class="proto-line"><strong>欲望：</strong>${card.desire}</div>
+            <div class="proto-line"><strong>恐惧：</strong>${card.fear}</div>
+            <div class="proto-line"><strong>创伤：</strong>${card.trauma}</div>
+            <div class="proto-line"><strong>光明：</strong>${card.light}</div>
+            <div class="proto-line"><strong>阴影：</strong>${card.dark}</div>
+            <div class="proto-line"><strong>伴侣：</strong>${partnerTags}</div>
+            <div class="proto-line"><strong>对手：</strong>${rivalTags}</div>
+            <div class="proto-line"><strong>挚友：</strong>${friendTags}</div>
+        </div>`;
+        document.getElementById("protoCardArea").insertAdjacentHTML('beforeend',html);
+    }
+    function findAndAddCard(name){
+        let t = protoCharacters.find(c=>c.name.includes(name));
+        if(t) addProtoCard(t);
+    }
+    function clearAllCards(){
+        document.getElementById("protoCardArea").innerHTML = '';
+    }
 
-        window.onload = function(){
-            document.getElementById('traitPool').value = localStorage.getItem('traitPool') || defaultTrait;
-            document.getElementById('jobPool').value = localStorage.getItem('jobPool') || defaultJob;
-            document.getElementById('bgPool').value = localStorage.getItem('bgPool') || defaultBg;
-            document.getElementById('plotPool').value = localStorage.getItem('plotPool') || defaultPlot;
-            let savedBeat = localStorage.getItem('beatTableData');
-            if(savedBeat){
-                let arr = JSON.parse(savedBeat);
-                let inps = document.querySelectorAll('.beat-cell');
-                arr.forEach((v,i)=>{if(inps[i])inps[i].value=v;});
-            }
-        }
-        function savePool(type){
-            let map = {trait:'traitPool',job:'jobPool',bg:'bgPool',plot:'plotPool'};
-            let val = document.getElementById(map[type]).value.trim();
-            localStorage.setItem(type+'Pool',val);
-            alert('已存入');
-        }
-
-        function saveBeatTable(){
+    window.onload = function(){
+        document.getElementById('traitPool').value = localStorage.getItem('traitPool') || defaultTrait;
+        document.getElementById('jobPool').value = localStorage.getItem('jobPool') || defaultJob;
+        document.getElementById('bgPool').value = localStorage.getItem('bgPool') || defaultBg;
+        document.getElementById('plotPool').value = localStorage.getItem('plotPool') || defaultPlot;
+        let savedBeat = localStorage.getItem('beatTableData');
+        if(savedBeat){
+            let arr = JSON.parse(savedBeat);
             let inps = document.querySelectorAll('.beat-cell');
-            let arr = [];
-            inps.forEach(i=>arr.push(i.value));
-            localStorage.setItem('beatTableData',JSON.stringify(arr));
-            alert('大纲已保存');
+            arr.forEach((v,i)=>{if(inps[i])inps[i].value=v;});
         }
-        function exportBeatTable(){
-            let rows = document.querySelectorAll('.beat-table tbody tr');
-            let text = '【写作大纲节拍器】\n阶段｜节点｜核心情节｜人物变化｜备注\n';
-            text += '--------------------------------------------\n';
-            rows.forEach(tr=>{
-                let tds = tr.querySelectorAll('input');
-                let row = [];
-                tds.forEach(i=>row.push(i.value||'无'));
-                text += row.join('｜')+'\n';
-            });
-            let blob = new Blob([text],{type:'text/plain;charset=utf-8'});
-            let url = URL.createObjectURL(blob);
-            let a = document.createElement('a');
-            a.href = url;
-            a.download = '写作大纲_节拍器.txt';
-            a.click();
-            URL.revokeObjectURL(url);
-        }
-    </script>
+    }
+    function savePool(type){
+        let map = {trait:'traitPool',job:'jobPool',bg:'bgPool',plot:'plotPool'};
+        let val = document.getElementById(map[type]).value.trim();
+        localStorage.setItem(type+'Pool',val);
+        alert('已存入');
+    }
+
+    function saveBeatTable(){
+        let inps = document.querySelectorAll('.beat-cell');
+        let arr = [];
+        inps.forEach(i=>arr.push(i.value));
+        localStorage.setItem('beatTableData',JSON.stringify(arr));
+        alert('大纲已保存');
+    }
+    function exportBeatTable(){
+        let rows = document.querySelectorAll('.beat-table tbody tr');
+        let text = '【写作大纲节拍器】\n阶段｜节点｜核心情节｜人物变化｜备注\n';
+        text += '--------------------------------------------\n';
+        rows.forEach(tr=>{
+            let tds = tr.querySelectorAll('input');
+            let row = [];
+            tds.forEach(i=>row.push(i.value||'无'));
+            text += row.join('｜')+'\n';
+        });
+        let blob = new Blob([text],{type:'text/plain;charset=utf-8'});
+        let url = URL.createObjectURL(blob);
+        let a = document.createElement('a');
+        a.href = url;
+        a.download = '写作大纲_节拍器.txt';
+        a.click();
+        URL.revokeObjectURL(url);
+    }
+</script>
 </body>
 </html>
