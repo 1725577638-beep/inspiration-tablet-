@@ -29,7 +29,6 @@
             letter-spacing: 3px;
         }
 
-        /* 手机单列，电脑双列 */
         .wrap-container {
             display: grid;
             grid-template-columns: 1fr;
@@ -242,7 +241,6 @@
 </head>
 <body>
 
-<!-- 你的原有完整内容不动，我完全没改 -->
 <header>
     <h1>Inspiration</h1>
 </header>
@@ -274,7 +272,8 @@
                     <h3>情节原型库</h3>
                     <textarea id="plotPool" placeholder="情节原型，每行一个"></textarea>
                     <button onclick="savePool('plot')">存入</button>
-                    <button onclick="drawItem('plot')">抽取</button>
+                    <!-- 👇 这里修复了！-->
+                    <button onclick="drawItem('plotPool')">抽取</button>
                 </div>
             </div>
         </div>
