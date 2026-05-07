@@ -15,27 +15,27 @@
             background: #1A1A1D;
             color: #EAEAEA;
             min-height: 100vh;
-            padding: 15px;
+            padding: 12px;
         }
         header {
             text-align: center;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
             border-bottom: 1px solid #3A3A3D;
-            padding-bottom: 15px;
+            padding-bottom: 12px;
         }
         h1 {
-            font-size: 24px;
+            font-size: 22px;
             color: #C9B4D1;
-            letter-spacing: 3px;
+            letter-spacing: 2px;
         }
 
+        /* 双栏布局：手机单列，电脑双列 */
         .wrap-container {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: 1fr;
             gap: 15px;
             max-width: 100%;
             margin: 0 auto;
-            align-items: stretch;
         }
         @media (min-width: 768px) {
             .wrap-container {
@@ -90,20 +90,20 @@
             letter-spacing: 0.3px;
         }
         textarea {
-            min-height: 100px;
+            min-height: 90px;
             resize: vertical;
         }
         button {
             background: #C9B4D1;
             color: #1A1A1D;
             border: none;
-            padding: 8px 14px;
+            padding: 7px 12px;
             border-radius: 8px;
             cursor: pointer;
             font-weight: bold;
             transition: opacity 0.2s;
-            margin-right: 6px;
-            margin-bottom: 6px;
+            margin-right: 5px;
+            margin-bottom: 5px;
             font-size: 13px;
         }
         button:hover {
@@ -120,13 +120,13 @@
             border-radius: 10px;
             padding: 10px;
         }
-        /* 素材卡牌 + 删除按钮 */
+        /* 素材卡牌 */
         .item-card {
             background: #2D2D34;
             padding: 10px 14px;
             border-radius: 10px;
             min-width: 120px;
-            max-width: 180px;
+            max-width: 100%;
             line-height: 1.6;
             font-size: 13px;
             position: relative;
@@ -138,23 +138,23 @@
             width: 16px;
             height: 16px;
             border-radius: 50%;
-            background: #444;
+            background: #666;
             color: #fff;
             font-size: 10px;
             display: flex;
             align-items: center;
             justify-content: center;
             cursor: pointer;
-            opacity: 0.6;
+            opacity: 0.85;
         }
-        .item-card .close-btn:hover {
-            opacity: 1;
+        .item-card .close-btn:active {
             background: #e55;
         }
 
+        /* 人物原型容器：手机1列，平板电脑2列 */
         .proto-container {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: 1fr;
             gap: 12px;
             margin-top: 12px;
             min-height: 80px;
@@ -167,7 +167,8 @@
                 grid-template-columns: 1fr 1fr;
             }
         }
-        /* 人物原型卡牌 + 删除按钮 */
+
+        /* 人物原型卡牌 */
         .proto-card {
             background: #2D2D34;
             border-radius: 12px;
@@ -183,17 +184,16 @@
             width: 18px;
             height: 18px;
             border-radius: 50%;
-            background: #555;
+            background: #666;
             color: #fff;
             font-size: 11px;
             display: flex;
             align-items: center;
             justify-content: center;
             cursor: pointer;
-            opacity: 0.7;
+            opacity: 0.85;
         }
-        .proto-card .close-btn:hover {
-            opacity: 1;
+        .proto-card .close-btn:active {
             background: #e55;
         }
         .proto-card h4 {
@@ -216,7 +216,7 @@
             cursor: pointer;
             font-size: 12px;
         }
-        .proto-tag:hover {
+        .proto-tag:active {
             background: #C9B4D1;
             color: #1A1A1D;
         }
@@ -236,7 +236,7 @@
             font-size: 12px;
             cursor: pointer;
         }
-        .plot-btn:hover {
+        .plot-btn:active {
             background: #C9B4D1;
             color: #111;
         }
@@ -265,21 +265,25 @@
         }
         .beat-table th, .beat-table td {
             border: 1px solid #3A3A3D;
-            padding: 8px;
+            padding: 6px 4px;
         }
         .beat-table th {
             background: #3A3A3D;
             color: #FBE4F0;
-            font-size: 13px;
+            font-size: 12px;
         }
         .beat-table input {
             background: #3A3A3D;
             border: none;
             color: #eee;
-            padding: 8px;
+            padding: 6px;
             margin: 0;
             border-radius: 6px;
-            font-size: 13px;
+            font-size: 12px;
+        }
+        /* 适配手机表格输入框不溢出 */
+        .beat-table input {
+            width: 100%;
         }
     </style>
 </head>
@@ -539,7 +543,7 @@
         btn.parentElement.remove();
     }
 
-    // 素材抽卡（带删除按钮）
+    // 素材抽卡
     function drawItem(poolId){
         const pool = document.getElementById(poolId).value.trim().split('\n').filter(item=>item.trim());
         if(!pool.length) return;
@@ -551,7 +555,7 @@
         document.getElementById("itemCardArea").innerHTML = '';
     }
 
-    // 人物原型抽卡（带删除按钮）
+    // 人物原型抽卡
     function drawProtoCard(){
         const card = protoCharacters[Math.floor(Math.random()*protoCharacters.length)];
         addProtoCard(card);
