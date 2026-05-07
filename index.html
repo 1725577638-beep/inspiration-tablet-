@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Inspiration | Writer's Prep</title>
     <style>
         * {
@@ -88,6 +88,7 @@
             margin-bottom: 12px;
             line-height: 1.7;
             letter-spacing: 0.3px;
+            word-break: break-all;
         }
         textarea {
             min-height: 90px;
@@ -130,6 +131,7 @@
             line-height: 1.6;
             font-size: 13px;
             position: relative;
+            word-break: break-all;
         }
         .item-card .close-btn {
             position: absolute;
@@ -146,6 +148,7 @@
             justify-content: center;
             cursor: pointer;
             opacity: 0.85;
+            z-index: 10;
         }
         .item-card .close-btn:active {
             background: #e55;
@@ -168,7 +171,7 @@
             }
         }
 
-        /* 人物原型卡牌 */
+        /* 人物原型卡牌 - 关键修复：文字自动换行 */
         .proto-card {
             background: #2D2D34;
             border-radius: 12px;
@@ -176,22 +179,25 @@
             line-height: 1.65;
             width: 100%;
             position: relative;
+            word-break: break-word;
+            overflow-wrap: break-word;
         }
         .proto-card .close-btn {
             position: absolute;
             top: 6px;
             right: 8px;
-            width: 18px;
-            height: 18px;
+            width: 20px;
+            height: 20px;
             border-radius: 50%;
             background: #666;
             color: #fff;
-            font-size: 11px;
+            font-size: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
             cursor: pointer;
-            opacity: 0.85;
+            opacity: 0.9;
+            z-index: 10;
         }
         .proto-card .close-btn:active {
             background: #e55;
@@ -201,10 +207,12 @@
             font-size: 16px;
             margin-bottom: 8px;
             text-align: center;
+            word-break: break-word;
         }
         .proto-line {
             margin: 5px 0;
             font-size: 13px;
+            word-break: break-word;
         }
         .proto-tag {
             display: inline-block;
@@ -247,6 +255,7 @@
             margin-top: 10px;
             line-height: 1.6;
             font-size: 13px;
+            word-break: break-all;
         }
 
         .full-card {
@@ -280,9 +289,6 @@
             margin: 0;
             border-radius: 6px;
             font-size: 12px;
-        }
-        /* 适配手机表格输入框不溢出 */
-        .beat-table input {
             width: 100%;
         }
     </style>
